@@ -1,4 +1,3 @@
-# src/quantize.py
 import joblib
 import numpy as np
 from sklearn.linear_model import LinearRegression
@@ -29,28 +28,22 @@ def run_quantization():
     ensure_dir("models")
     model = joblib.load("models/linear_regression.joblib")
     
-    # Extract parameters
     params = {
         'coef_': model.coef_,
         'intercept_': model.intercept_
     }
     
-    # Save unquantized parameters
     joblib.dump(params, "models/unquant_params.joblib")
     
-    # Quantize parameters
     quantized = quantize_parameters(params)
     joblib.dump(quantized, "models/quant_params.joblib")
     
-    # Dequantize and verify
     dequantized = dequantize_parameters(quantized)
     
-    # Create new model with dequantized parameters
     new_model = LinearRegression()
     new_model.coef_ = dequantized['coef_']
     new_model.intercept_ = dequantized['intercept_']
     
-    # Save dequantized model
     joblib.dump(new_model, "models/dequant_model.joblib")
     print("Quantization process completed successfully")
 

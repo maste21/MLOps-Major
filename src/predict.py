@@ -1,4 +1,3 @@
-# src/predict.py
 import joblib
 from sklearn.datasets import fetch_california_housing
 import numpy as np
@@ -19,16 +18,15 @@ def make_predictions(model, X):
     return model.predict(X)
 
 if __name__ == "__main__":
-    # Load model
     model = load_model()
     if model is None:
         exit(1)
     
-    # Load sample data
-    data = fetch_california_housing()
-    X_sample = data.data[:5]  # First 5 samples
     
-    # Make predictions
+    data = fetch_california_housing()
+    X_sample = data.data[:5] 
+
+    
     predictions = make_predictions(model, X_sample)
     
     print("Sample predictions:")

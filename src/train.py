@@ -1,4 +1,3 @@
-# src/train.py
 from sklearn.datasets import fetch_california_housing
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
@@ -20,12 +19,10 @@ def train_model():
     model = LinearRegression()
     model.fit(X_train, y_train)
     
-    # Evaluate
     y_pred = model.predict(X_test)
     r2 = r2_score(y_test, y_pred)
     print(f"R2 Score: {r2:.4f}")
     
-    # Save model
     ensure_dir("models")
     model_path = "models/linear_regression.joblib"
     joblib.dump(model, model_path)

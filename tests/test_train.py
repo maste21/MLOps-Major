@@ -1,4 +1,3 @@
-# tests/test_train.py
 import pytest
 from src.train import load_data, train_model  
 from sklearn.linear_model import LinearRegression
@@ -10,7 +9,7 @@ def test_data_loading():
     X_train, X_test, y_train, y_test = load_data()
     assert X_train.shape[0] == y_train.shape[0]
     assert X_test.shape[0] == y_test.shape[0]
-    assert X_train.shape[1] == 8  # California housing has 8 features
+    assert X_train.shape[1] == 8 
 
 def test_model_training():
     """Test model training"""
@@ -18,7 +17,7 @@ def test_model_training():
     assert isinstance(model, LinearRegression)
     assert hasattr(model, 'coef_')
     assert hasattr(model, 'intercept_')
-    assert r2 > 0.5  # Minimum R2 threshold
+    assert r2 > 0.5  
 
 def test_model_saving():
     """Test if model is saved correctly"""

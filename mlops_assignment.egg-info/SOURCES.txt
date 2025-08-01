@@ -1,7 +1,0 @@
-README.md
-setup.py
-mlops_assignment.egg-info/PKG-INFO
-mlops_assignment.egg-info/SOURCES.txt
-mlops_assignment.egg-info/dependency_links.txt
-mlops_assignment.egg-info/top_level.txt
-tests/test_train.py
