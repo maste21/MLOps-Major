@@ -203,7 +203,7 @@ Add code and necessary files as per below structure
 ![alt text](image.png)
 
 
-### Docker build and run:
+## Docker build and run:
 
 ### Build image
 
@@ -218,15 +218,20 @@ Add code and necessary files as per below structure
 
 **Three Automated Stages:**
 
-1. **Test** - Runs pytest validation (`tests/test_train.py`)
-2. **Train** - Trains model + quantizes parameters
-3. **Deploy** - Builds Docker image and tests predictions
+1. **Test**: Runs pytest validation (tests/test_train.py)
+       - Executes unit tests to validate code functionality
+2. **Train & Quantize**: Trains model and optimizes parameters
+       - Performs model training with the latest data
+       - Applies quantization to reduce model size
+3. **Build & Test**: Creates Docker image and runs verification tests
+       - Builds container with the trained model
+       - Runs prediction tests to verify model functionality       
 
 **Key Features:**
 - Runs on every `git push`
 - Python 3.9 environment
 - Artifacts passed between stages
-- Docker verification as final check
+- Container verification as final quality check
 
 ### Workflow Diagram
 
