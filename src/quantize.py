@@ -5,7 +5,7 @@ from sklearn.linear_model import LinearRegression
 from src.utils import ensure_dir, load_model
 
 def quantize_parameters(params):
-    """Quantize parameters to 8-bit integers with dynamic scaling"""
+    """Quantize parameters to 8-bit integers"""
     
     max_val = max(np.max(np.abs(params['coef_'])), abs(params['intercept_']))
     scale = 127 / max_val 

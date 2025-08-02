@@ -5,7 +5,7 @@ import joblib
 from sklearn.linear_model import LinearRegression
 
 def ensure_dir(directory):
-    """Create directory if it doesn't exist with error handling"""
+    """Create directory"""
     try:
         if not os.path.exists(directory):
             os.makedirs(directory)
@@ -16,7 +16,7 @@ def ensure_dir(directory):
         sys.exit(1)
 
 def validate_model(model):
-    """Verify model has required attributes and type"""
+    """Verify model with required attributes"""
     if not isinstance(model, LinearRegression):
         print("ERROR: Model is not a LinearRegression instance", file=sys.stderr)
         sys.exit(1)
@@ -29,7 +29,7 @@ def validate_model(model):
     return True
 
 def save_model(model, path):
-    """Save model with validation and error handling"""
+    """Save model with validation"""
     try:
         validate_model(model)
         ensure_dir(os.path.dirname(path))
@@ -41,7 +41,7 @@ def save_model(model, path):
         sys.exit(1)
 
 def load_model(path):
-    """Load model with validation and error handling"""
+    """Load model with validation"""
     try:
         model = joblib.load(path)
         validate_model(model)
