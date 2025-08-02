@@ -203,12 +203,21 @@ After adding code and files proceed with below steps,
 
 ## Performance Comparison
 
-| Metric         | Original Model               | Quantized Model              |
-|----------------|------------------------------|------------------------------|
-| R² Score       | 0.576                        | 0.576                        |
-| MSE            | 0.556                        | 0.556                        |
-| Model Size     | 664 bytes                    | 397 bytes                    |
-| Max Error      | -                            | 0.142                        |
+| Metric                | Original Model | Quantized Model | Improvement |
+|-----------------------|----------------|-----------------|-------------|
+| **Accuracy**          |                |                 |             |
+| R² Score              | 0.576          | 0.576           | ±0%         |
+| MSE                   | 0.556          | 0.556           | ±0%         |
+| Model Size            | 664 bytes      | 397 bytes       | **40%↓**    |
+|------------------------------------------------------------------------|                      
+|**Quantization Stats** |                |                 |             |
+| Scale Factor          | N/A            | 3.4303          | -           |
+| Weight Range (coef_)  | N/A            | [-1, 3]         | -           |
+| Intercept Value       | N/A            | -127            | -           |
+| **Quantization Error**|                |                 |             |
+| Max Error             | N/A            | 0.142           | -           |
+| Mean Error            | N/A            | 0.079           | -           |
+| Intercept Error       | N/A            | 0.000           | -           |
 
 
 ### Testing
