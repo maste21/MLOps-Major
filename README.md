@@ -209,8 +209,7 @@ After adding code and files proceed with below steps,
 | R² Score              | 0.576          | 0.576           | ±0%         |
 | MSE                   | 0.556          | 0.556           | ±0%         |
 | Model Size            | 664 bytes      | 397 bytes       | **40%↓**    |
-|------------------------------------------------------------------------|                      
-|**Quantization Stats** |                |                 |             |
+| **Quantization Stats**|                |                 |             |
 | Scale Factor          | N/A            | 3.4303          | -           |
 | Weight Range (coef_)  | N/A            | [-1, 3]         | -           |
 | Intercept Value       | N/A            | -127            | -           |
