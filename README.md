@@ -4,7 +4,7 @@ This project implements a complete **MLOps pipeline** for predicting California 
 
 ## Features:
 - **End-to-End Pipeline**: Data loading → Training → Testing → Quantization → Containerization
-- **Model**: Scikit-learn LinearRegression
+- **Model**: Scikit-learn Linear Regression
 - **Dataset**: California Housing (sklearn.datasets)
 - **Optimization**: Manual 8-bit quantization
 - **Containerization**: Docker support for model verification
@@ -14,8 +14,8 @@ This project implements a complete **MLOps pipeline** for predicting California 
 
 ### Root directory setup and GIT init:
 
-    mkdir mlops-assignment
-    cd mlops-assignment
+    mkdir MLOps-Major
+    cd MLOps-Major
     git init
 
 ### Basic files creation:
@@ -48,23 +48,23 @@ Add code and necessary files as per below structure
         ├── .gitignore
         └── README.md
         ```
-- MLOps-Major/ : Root directory containing all project components.
-- .github/workflows/ci.yml : GitHub Actions configuration for pipeline run (testing, training & quantization, Docker build & run).
-- src/__init__.py : Marks the src directory as a Python package.
-- src/train.py : Contains LinearRegression model training logic (data loading, training model, saving checkpoints).
-- src/quantize.py : Converts trained LinearRegression weights to 8-bit integers (manual quantization) and verifies inference accuracy 
-- src/predict.py : Handles model predictions (loads trained model, processes input, returns output).
-- src/utils.py : Shared utilities (i.e helper functions)
-- tests/__init__.py : Enables test directory to be treated as a Python package.
-- tests/test_train.py : Unit tests for training logic (pytest).
-- Dockerfile : Defines Docker image setup (Python 3.9, dependencies, packaging).
-- requirements.txt : Lists of python dependencies.
-- .gitignore :  Excludes files/folders from Git (e.g., __pycache__, .env, *.pth).
-- README.md : Project documentation details
+- **MLOps-Major/** : Root directory containing all project components.
+- **.github/workflows/ci.yml** : GitHub Actions configuration for pipeline run (testing, training & quantization, Docker build & run).
+- **src/__init__.py** : Marks the src directory as a Python package.
+- **src/train.py** : Contains Linear Regression model training logic (data loading, training model, saving checkpoints).
+- **src/quantize.py** : Converts trained Linear Regression weights to 8-bit integers (manual quantization) and verifies inference accuracy 
+- **src/predict.py** : Handles model predictions (loads trained model, processes input, returns output).
+- **src/utils.py** : Shared utilities (i.e helper functions)
+- **tests/__init__.py** : Enables test directory to be treated as a Python package.
+- **tests/test_train.py** : Unit tests for training logic (pytest).
+- **Dockerfile** : Defines Docker image setup (Python 3.9, dependencies, packaging).
+- **requirements.txt** : Lists of python dependencies.
+- **.gitignore** :  Excludes files/folders from Git (e.g., __pycache__, .env, *.pth).
+- **README.md** : Project documentation details
 
 After adding code and files proceed with below steps,
 
-### Create a virtual environment and install dependencies
+### Create a virtual environment and install dependencies:
 
     python -m venv venv
     source venv/Scripts/activate
@@ -233,14 +233,14 @@ After adding code and files proceed with below steps,
 
 **Three Automated Stages:**
 
-1. **Test**: Runs pytest validation (tests/test_train.py)
+**1.Test**: Runs pytest validation (tests/test_train.py)
 - Executes unit tests to validate code functionality
 
-2. **Train & Quantize**: Trains model and optimizes parameters
+**2.Train & Quantize**: Trains model and optimizes parameters
 - Performs model training with the latest data
 - Applies quantization to reduce model size
 
-3. **Build & Test**: Creates Docker image and runs verification tests
+**3.Build & Test**: Creates Docker image and runs verification tests
 - Builds container with the trained model
 - Runs prediction tests to verify model functionality       
 
