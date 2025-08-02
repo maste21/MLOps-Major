@@ -29,25 +29,25 @@ This project implements a complete **MLOps pipeline** for predicting California 
 Add code and necessary files as per below structure
 
 ## Project Structure:
-```
-MLOps-Major/
-├── .github/
-│   └── workflows/
-│       └── ci.yml
-├── src/
-│   ├── __init__.py
-│   ├── train.py
-│   ├── quantize.py
-│   ├── predict.py
-│   └── utils.py
-├── tests/
-│   ├── __init__.py
-│   └── test_train.py
-├── Dockerfile
-├── requirements.txt
-├── .gitignore
-└── README.md
-```
+        ```
+        MLOps-Major/
+        ├── .github/
+        │   └── workflows/
+        │       └── ci.yml
+        ├── src/
+        │   ├── __init__.py
+        │   ├── train.py
+        │   ├── quantize.py
+        │   ├── predict.py
+        │   └── utils.py
+        ├── tests/
+        │   ├── __init__.py
+        │   └── test_train.py
+        ├── Dockerfile
+        ├── requirements.txt
+        ├── .gitignore
+        └── README.md
+        ```
 
 ### Create a virtual environment and install dependencies
 
@@ -82,21 +82,21 @@ MLOps-Major/
 - Git
 - Docker
 
-# Clone the repo
+### Clone the repo
 
-   git clone https://github.com/maste21/MLOps-Major.git
-   cd MLOps-Major
+    git clone https://github.com/maste21/MLOps-Major.git
+    cd MLOps-Major
 
-# Create virtual environment 
+### Create virtual environment 
 
     python -m venv venv
     source venv/Scripts/activate
 
-# Install dependencies
+### Install dependencies
 
     pip install -r requirements.txt
 
-# Training Model
+### Training Model
 
     python -m src.train
 
@@ -117,7 +117,7 @@ MLOps-Major/
     Training completed. Model saved to models/linear_regression.joblib
     ```
 
-# Quantization
+### Quantization
 
     python -m src.quantize
 
@@ -153,7 +153,7 @@ MLOps-Major/
 | Scale Factor          | 3.4303      |
 
 
-# Prediction
+### Prediction
 
     python -m src.predict
 
@@ -186,7 +186,7 @@ MLOps-Major/
       Prediction: 2.40
     ``` 
 
-# Performance Comparison
+## Performance Comparison
 
 | Metric         | Original Model               | Quantized Model              |
 |----------------|------------------------------|------------------------------|
@@ -196,7 +196,7 @@ MLOps-Major/
 | Max Error      | -                            | 0.142                        |
 
 
-# Testing
+### Testing
 
     pytest tests/
 
@@ -205,11 +205,11 @@ MLOps-Major/
 
 ### Docker build and run:
 
-# Build image
+### Build image
 
     docker build -t mlops-major .
 
-# Run container
+### Run container
     
     docker run --rm mlops-major
 
@@ -228,11 +228,9 @@ MLOps-Major/
 - Artifacts passed between stages
 - Docker verification as final check
 
-## Workflow Diagram
-```mermaid
-graph LR
-    A[Test Suite] --> B[Train & Quantize]
-    B --> C[Build & Test Container]
+### Workflow Diagram
+
+![alt text](image-1.png)
 
 
 
