@@ -219,11 +219,16 @@ Add code and necessary files as per below structure
 **Three Automated Stages:**
 
 1. **Test**: Runs pytest validation (tests/test_train.py)
+
        - Executes unit tests to validate code functionality
+
 2. **Train & Quantize**: Trains model and optimizes parameters
+
        - Performs model training with the latest data
        - Applies quantization to reduce model size
+
 3. **Build & Test**: Creates Docker image and runs verification tests
+
        - Builds container with the trained model
        - Runs prediction tests to verify model functionality       
 
